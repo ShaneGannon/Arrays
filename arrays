@@ -1,0 +1,48 @@
+void setup()
+{
+  size(500, 500);
+  //println(test[0]);
+  
+  /*r(int i = 0; i < rainfall.length; i ++);
+  {
+    println(months[i] + " " + rainfall[i]);
+  }*/
+  
+ //foreach loop
+ int i = 0;
+ for(float f:rainfall)
+ {
+    println(months[i] + " " + rainfall[i]);
+    i ++;
+ }
+ 
+ int lowest = minIndex(rainfall);
+ println("The month with the lowest rainfall is: " + months[lowest]);
+}
+
+float[] rainfall = {45, 37, 55, 27, 38, 50, 79, 48, 104, 31, 100, 58};
+String[] months = {"jan", "feb", ",mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"};
+color[] colors = new color[12];
+//float[] test;
+
+  int minIndex(float[] arr)
+  {
+      float i = 0;
+      
+      float temp = 0;
+      for( i = 0; i < arr.length; i++)
+      {
+        if(arr[i] > arr[i++])
+        {
+         temp = arr[i];
+         arr[i] = arr[i++];
+         arr[i++] = temp;
+        }
+        float lowest = 0;
+        months[lowest] = arr[0];
+      }
+  }
+void draw()
+{
+  
+}
